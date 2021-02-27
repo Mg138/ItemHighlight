@@ -3,19 +3,19 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import java.net.URI
 
 group = "io.github.mg138"
-version = "1.0"
+version = "0.0.1"
 
-val kotlinVersion = "1.3.61"
+val kotlinVersion = "1.3.72"
 
 plugins {
     java
-    kotlin("jvm") version "1.3.61"
+    kotlin("jvm") version "1.3.72"
     id("com.github.johnrengelman.shadow") version "5.0.0"
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
 }
 
 tasks.withType<KotlinCompile> {
@@ -31,6 +31,7 @@ repositories {
 
 dependencies {
     compileOnly(kotlin("stdlib-jdk8", kotlinVersion))
+    compileOnly("dev.reactant:reactant:0.2.0")
     compileOnly("org.spigotmc:spigot-api:1.16.4-R0.1-SNAPSHOT")
 
     compileOnly(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
