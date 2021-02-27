@@ -1,0 +1,6 @@
+name: "ItemHighlight"
+main: io.github.mg138.itemhighlight.ItemHighlight
+version: 1.0
+api-version: 1.16
+
+soft-depend: LocaleLib
