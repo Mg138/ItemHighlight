@@ -3,7 +3,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 import java.net.URI
 
 group = "io.github.mg138"
-version = "0.0.1"
+version = "1.0"
 
 val kotlinVersion = "1.3.72"
 
@@ -26,13 +26,11 @@ tasks.withType<KotlinCompile> {
 repositories {
     mavenCentral()
     maven (url = URI.create("https://hub.spigotmc.org/nexus/content/repositories/snapshots"))
-    maven (url = URI.create("https://oss.sonatype.org/content/repositories/snapshots/"))
 }
 
 dependencies {
     compileOnly(kotlin("stdlib-jdk8", kotlinVersion))
-    compileOnly("dev.reactant:reactant:0.2.0")
-    compileOnly("org.spigotmc:spigot-api:1.16.4-R0.1-SNAPSHOT")
+    compileOnly("org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT")
 
     compileOnly(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
 

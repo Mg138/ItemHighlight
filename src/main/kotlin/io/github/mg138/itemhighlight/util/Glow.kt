@@ -1,6 +1,5 @@
 package io.github.mg138.itemhighlight.util
 
-import net.md_5.bungee.api.ChatColor
 import org.bukkit.Bukkit
 import org.bukkit.entity.Entity
 import org.bukkit.scoreboard.Team
