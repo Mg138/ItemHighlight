@@ -20,10 +20,11 @@ class Highlighter : Listener {
             item.isCustomNameVisible = true
             val name: String = when {
                 meta.displayName.isNotEmpty() -> meta.displayName
-                ItemHighlight.localeLib != null -> {
-                    val key = ItemHighlight.localeLib!!.localeManager.queryMaterial(item.itemStack.type)
-                    TranslatableComponent(key).toPlainText()
-                }
+                ItemHighlight.localeManager != null -> TranslatableComponent(
+                    ItemHighlight.localeManager!!.queryMaterial(
+                        item.itemStack.type
+                    )
+                ).toPlainText()
                 else -> ""
             }
             item.customName = name

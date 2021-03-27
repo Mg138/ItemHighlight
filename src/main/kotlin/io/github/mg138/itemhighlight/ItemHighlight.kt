@@ -12,15 +12,15 @@ class ItemHighlight : JavaPlugin() {
     companion object {
         lateinit var inst: ItemHighlight
         lateinit var jar: File
-        var localeLib: LocaleLib? = null
+        var localeManager: LocaleManager? = null
     }
 
     override fun onEnable() {
         inst = this
         jar = inst.file
 
-        if (inst.server.pluginManager.isPluginEnabled("LocaleLib")) {
-            localeLib = inst.server.pluginManager.getPlugin("LocaleLib") as LocaleLib
+        if (server.pluginManager.isPluginEnabled("LocaleLib")) {
+            localeManager = (server.pluginManager.getPlugin("LocaleLib") as LocaleLib).localeManager
         }
 
         reg()
