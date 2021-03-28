@@ -18,17 +18,12 @@ class Highlighter : Listener {
             val meta = item.itemStack.itemMeta ?: return
 
             item.isCustomNameVisible = true
-            val name: String = when {
+            val name = when {
                 meta.displayName.isNotEmpty() -> meta.displayName
-                ItemHighlight.localeManager != null -> TranslatableComponent(
-                    ItemHighlight.localeManager!!.queryMaterial(
-                        item.itemStack.type
-                    )
-                ).toPlainText()
-                else -> ""
+                else -> null
             }
-            item.customName = name
             item.isGlowing = true
+            item.customName = name
             Glow.setGlowColor(ColorUtil.getMostSignificantColor(name), item)
         }
     }
