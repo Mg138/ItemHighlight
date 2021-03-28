@@ -41,7 +41,8 @@ object ColorUtil {
         return closest.firstEntry().value
     }
 
-    fun getMostSignificantColor(string: String): Color {
+    fun getMostSignificantColor(string: String?): Color {
+        string ?: return ChatColor.WHITE.color
         val colors: MutableMap<Color, Int> = HashMap()
         var color: Color? = null
         var c = 0
