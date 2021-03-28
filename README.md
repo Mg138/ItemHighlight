@@ -11,7 +11,7 @@
 
 ## nms
 有辦法叫玩家自己翻譯，但是只會在 1.16.5 上跑 (也許可能應該大概有機會 1.16.4 也能跑)\
-如果哪天 Bugkit 更新，不會很智障的自己亂翻譯 (見下面 "幹你娘bugkit")\
+如果哪天 Bugkit 更新，不會很智障的自己亂翻譯 (見 ["幹你娘bugkit"](https://github.com/Skydale/ItemHighlight/blob/master/README.md#%E5%B9%B9%E4%BD%A0%E5%A8%98bugkit))\
 可能會被幹回 master\
 *我哪天可能會加多版本 但是不要指望*
 
