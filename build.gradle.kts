@@ -18,6 +18,10 @@ java {
     targetCompatibility = JavaVersion.VERSION_11
 }
 
+tasks.withType<Jar> {
+    archiveClassifier.set("nms")
+}
+
 tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "1.8"
     kotlinOptions.freeCompilerArgs = listOf("-Xjvm-default=compatibility")
@@ -29,7 +33,7 @@ repositories {
 }
 
 dependencies {
-    compileOnly(kotlin("stdlib-jdk8", kotlinVersion))
+    implementation(kotlin("stdlib-jdk8", kotlinVersion))
     compileOnly("org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT")
 
     compileOnly(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
