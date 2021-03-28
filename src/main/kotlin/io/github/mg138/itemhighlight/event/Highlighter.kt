@@ -5,8 +5,6 @@ import io.github.mg138.itemhighlight.util.ColorUtil
 import io.github.mg138.itemhighlight.util.Glow
 import net.md_5.bungee.api.chat.TranslatableComponent
 import net.md_5.bungee.chat.ComponentSerializer
-import net.minecraft.server.v1_16_R3.ChatComponentText
-import net.minecraft.server.v1_16_R3.ChatMessage
 import org.bukkit.craftbukkit.v1_16_R3.entity.CraftItem
 import org.bukkit.craftbukkit.v1_16_R3.util.CraftChatMessage
 import org.bukkit.entity.EntityType
