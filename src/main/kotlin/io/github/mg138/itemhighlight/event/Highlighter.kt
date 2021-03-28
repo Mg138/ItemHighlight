@@ -23,7 +23,6 @@ class Highlighter : Listener {
             val item = itemEntity.itemStack
             val meta = item.itemMeta
 
-            val craftItemEntity = itemEntity as CraftItem
             itemEntity.isCustomNameVisible = true
             if (itemEntity.customName == null) {
                 when {
@@ -31,14 +30,15 @@ class Highlighter : Listener {
                         itemEntity.customName = meta.displayName
                     }
                     ItemHighlight.localeManager != null -> {
-                        craftItemEntity.handle.customName =
-                            CraftChatMessage.fromJSON(
-                                ComponentSerializer.toString(
-                                    TranslatableComponent(
-                                        ItemHighlight.localeManager!!.queryMaterial(item.type)
-                                    )
+                        val craftItemEntity = itemEntity as CraftItem
+
+                        craftItemEntity.handle.customName = CraftChatMessage.fromJSON(
+                            ComponentSerializer.toString(
+                                TranslatableComponent(
+                                    ItemHighlight.localeManager!!.queryMaterial(item.type)
                                 )
                             )
+                        )
                     }
                     else -> itemEntity.customName = null
                 }
